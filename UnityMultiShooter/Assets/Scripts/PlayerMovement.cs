@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
         rb.MovePosition(transform.position + move * speed * Time.deltaTime);
+        anim.SetFloat("Speed", move.magnitude);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
