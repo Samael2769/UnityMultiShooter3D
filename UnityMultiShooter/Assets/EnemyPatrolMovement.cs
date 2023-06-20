@@ -8,6 +8,7 @@ public class EnemyPatrolMovement : MonoBehaviour
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private GameObject Entity;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private Animator animator;
     private int currentWaypointIndex = 0;
 
     // Start is called before the first frame update
@@ -30,5 +31,6 @@ public class EnemyPatrolMovement : MonoBehaviour
         Vector3 direction = waypoints[currentWaypointIndex].position - Entity.transform.position;
         direction.Normalize();
         rb.velocity = direction * speed;
+        animator.SetFloat("Speed", rb.velocity.magnitude);
     }
 }
