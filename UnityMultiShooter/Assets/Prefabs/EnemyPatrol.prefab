@@ -147,6 +147,8 @@ MonoBehaviour:
   - {fileID: 1508810205879790090}
   Entity: {fileID: 1508810204467863053}
   rb: {fileID: 1508810204467863052}
+  animator: {fileID: 1155775600158129024}
+  collideValue: 0
 --- !u!1001 &2113363084462524684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,8 +208,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 963224205999813260, guid: e982a3c4807215c49a9d554453c6b5d6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7b4dad222c9d3e54d8d60da4d4c1c53d, type: 2}
+    - target: {fileID: 963224205999813260, guid: e982a3c4807215c49a9d554453c6b5d6, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e982a3c4807215c49a9d554453c6b5d6, type: 3}
+--- !u!95 &1155775600158129024 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 963224205999813260, guid: e982a3c4807215c49a9d554453c6b5d6, type: 3}
+  m_PrefabInstance: {fileID: 2113363084462524684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &1508810204467863052 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 694806017218352896, guid: e982a3c4807215c49a9d554453c6b5d6, type: 3}

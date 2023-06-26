@@ -8,6 +8,7 @@ public class FPSCamera : MonoBehaviour
     public float mouseSensitivity = 100f;
     public float verticalClampAngle = 90f;
     public float cameraOffset = 0.6f;
+    private float cameraFrontOffset = 0.5f;
 
     private float verticalRotation = 0f;
     private float horizontalRotation = 0f;
@@ -39,6 +40,7 @@ public class FPSCamera : MonoBehaviour
 
         // Set camera position on the player's head
         Vector3 desiredPosition = playerBody.position + playerBody.up * cameraOffset;
+        desiredPosition += playerBody.forward * cameraFrontOffset;
         transform.position = desiredPosition;
     }
 }

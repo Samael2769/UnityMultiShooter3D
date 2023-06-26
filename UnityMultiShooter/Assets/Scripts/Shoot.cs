@@ -23,7 +23,7 @@ public class Shoot : MonoBehaviour
         {
             Debug.Log("Shoot");
             GameObject bullet = Instantiate(bulletPrefab, transform.position + bulletSpawnOffset, transform.rotation);
-            bullet.transform.Rotate(0, transform.rotation.y + 90, 90);
+            bullet.transform.Rotate(transform.rotation.x, transform.rotation.y + 90, 90);
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 1000f);
         }
     }

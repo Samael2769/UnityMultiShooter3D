@@ -9,6 +9,9 @@ public class Leveling : MonoBehaviour
     [SerializeField] private int level = 1;
     [SerializeField] private int maxLevel = 10;
     [SerializeField] private int maxObstacles = 10;
+    [SerializeField] private GameObject Enemy;
+    [SerializeField] private List<GameObject> enemies = new List<GameObject>();
+    [SerializeField] private int maxEnemies = 2;
     private int levelHeight = 45;
     private int levelWidth = 45;
     
@@ -35,6 +38,15 @@ public class Leveling : MonoBehaviour
             {
                 obstacle.transform.localPosition = new Vector3(obstacle.transform.localPosition.x, 1.2f, obstacle.transform.localPosition.z);
             }
+        }
+
+        for (int i = 0; i < maxEnemies; i++)
+        {
+            GameObject enemy = Instantiate(Enemy, transform.position, Quaternion.identity);
+            enemy.transform.parent = transform;
+            enemy.transform.localPosition = new Vector3(Random.Range(-levelWidth/2, levelWidth/2), 2, Random.Range(-levelHeight/2, levelHeight/2));
+            enemy.transform.localRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+            enemies.Add(enemy);
         }
     }
 
