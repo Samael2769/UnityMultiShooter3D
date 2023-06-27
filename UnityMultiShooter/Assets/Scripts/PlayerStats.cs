@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     public int health = 100;
     public int armor = 0;
-    [SerializeField] private Animator animator;
+    public Animator animator;
 
     // Update is called once per frame
     void Update()
